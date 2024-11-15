@@ -9,18 +9,17 @@ import Sidebar from '../components/Sidebar';
 
 interface User {
     email?: string | null;
-    // Tambahkan properti lain dari objek User jika diperlukan dan buat opsional
 } 
 
 const Home = () => {
     const navigate = useNavigate();
-    const [user, setUser] = useState<User | null>(null); // Ubah tipe state menjadi User | null
+    const [user, setUser] = useState<User | null>(null);
 
     useEffect(() => {
         const checkUser = async () => {
             const { data } = await supabase.auth.getUser();
             if (!data.user) {
-                navigate('/login'); // Redirect to login if not authenticated
+                navigate('/login');
             } else {
                 setUser(data.user);
             }
@@ -29,7 +28,7 @@ const Home = () => {
         checkUser();
     }, [navigate]);
 
-    if (!user) return null; // Prevent rendering if no user is logged in
+    if (!user) return null;
 
     return (
         <div className="app-container">

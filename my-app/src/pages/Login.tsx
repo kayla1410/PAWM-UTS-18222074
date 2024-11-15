@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { supabase } from '../supabaseClient'; // Pastikan path ke supabaseClient sesuai dengan struktur project-mu
+import { supabase } from '../supabaseClient';
 import './style.css';
 import fizlabimage from '../images/Sign In.png';
 
@@ -14,7 +14,6 @@ const Login: React.FC = () => {
         setError(null);
         setLoading(true);
 
-        // Panggil Supabase untuk login
         const { error } = await supabase.auth.signInWithPassword({
             email,
             password,
@@ -25,7 +24,6 @@ const Login: React.FC = () => {
         if (error) {
             setError(error.message);
         } else {
-            // Redirect ke halaman lain setelah login sukses, misalnya Home
             window.location.href = '/home';
         }
     };

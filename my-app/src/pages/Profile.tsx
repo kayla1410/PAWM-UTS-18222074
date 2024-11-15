@@ -8,18 +8,17 @@ import './Profile.css';
 
 interface User {
     email?: string | null;
-    // Tambahkan properti lain dari objek User jika diperlukan dan buat opsional
 }  
 
 function Profile() {
     const navigate = useNavigate();
-    const [user, setUser] = useState<User | null>(null); // State untuk menyimpan user data
+    const [user, setUser] = useState<User | null>(null); 
 
     useEffect(() => {
         const checkUser = async () => {
             const { data } = await supabase.auth.getUser();
             if (!data.user) {
-                navigate('/login'); // Redirect to login if not authenticated
+                navigate('/login'); 
             } else {
                 setUser(data.user);
             }
@@ -30,10 +29,10 @@ function Profile() {
 
     const handleLogout = async () => {
         await supabase.auth.signOut();
-        navigate('/login'); // Redirect to login after logout
+        navigate('/login'); 
     };
 
-    if (!user) return null; // Prevent rendering if no user is logged in
+    if (!user) return null; 
 
     return (
         <div className="profile-page">

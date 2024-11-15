@@ -1,5 +1,3 @@
-// src/components/ProfileForm.tsx
-
 import React from 'react';
 import '../pages/Profile.css';
 

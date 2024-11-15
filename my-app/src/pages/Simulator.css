@@ -43,8 +43,8 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text inside .simulator-details */
+    align-items: center;
+    text-align: center; 
 }
 
 .simulator-details h3 {

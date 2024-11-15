@@ -126,8 +126,6 @@ const BidangMiring = () => {
             if (userError || !userData.user) {
                 throw new Error("Anda harus login untuk menyimpan simulasi!");
             }
-
-            // Parameter dan hasil perhitungan disimpan dalam bentuk JSON
             const parameters = JSON.stringify({
                 mass,
                 angle,

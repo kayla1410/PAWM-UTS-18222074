@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { supabase } from '../supabaseClient'; // Pastikan path ke supabaseClient sesuai dengan struktur project-mu
+import { supabase } from '../supabaseClient';
 import './style.css';
 import fizlabimage from '../images/Sign In.png';
 
@@ -16,24 +16,23 @@ const SignIn: React.FC = () => {
         setError(null);
         setSuccess(null);
 
-        // Register user with email and password
         const { data, error: signUpError } = await supabase.auth.signUp({
             email,
             password,
         });
 
-        console.log("User sign-up data:", data); // Debugging output
+        console.log("User sign-up data:", data); 
 
         if (signUpError) {
             setError(signUpError.message);
-            console.error("Error during sign-up:", signUpError.message); // Debugging output
+            console.error("Error during sign-up:", signUpError.message); 
         } else {
-            // After successful signup, insert additional user data into the 'profiles' table
+         
             const { error: profileError } = await supabase
                 .from('profiles')
                 .insert([
                     {
-                        id: data.user?.id, // This is the user's unique ID from Supabase
+                        id: data.user?.id, 
                         username: username,
                         fullName: fullName,
                         email: email,
@@ -42,15 +41,15 @@ const SignIn: React.FC = () => {
 
             if (profileError) {
                 setError(profileError.message);
-                console.error("Error inserting profile data:", profileError.message); // Debugging output
+                console.error("Error inserting profile data:", profileError.message); 
             } else {
                 setSuccess('Registration successful! Please check your email to verify your account.');
-                // Reset form input after successful registration
+              
                 setFullName('');
                 setUsername('');
                 setEmail('');
                 setPassword('');
-                console.log("Profile data inserted successfully!"); // Debugging output
+                console.log("Profile data inserted successfully!"); 
             }
         }
     };

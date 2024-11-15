@@ -5,7 +5,7 @@ import'./Savedprogress.css'
 const SavedProgress = () => {
     const [bidangMiringData, setBidangMiringData] = useState<any[]>([]);
     const [jungkatJungkitData, setJungkatJungkitData] = useState<any[]>([]);
-    const [selectedSimulation, setSelectedSimulation] = useState<any>(null); // Menyimpan simulasi yang dipilih
+    const [selectedSimulation, setSelectedSimulation] = useState<any>(null); 
     const [loading, setLoading] = useState(true);
 
     const fetchSavedProgress = async () => {
@@ -18,7 +18,6 @@ const SavedProgress = () => {
             }
     
             if (userData?.user) {
-                // Ambil data Bidang Miring
                 const { data: bidangMiring, error: bidangMiringError } = await supabase
                     .from('plane_simulations')
                     .select('*')
@@ -27,7 +26,6 @@ const SavedProgress = () => {
                 if (bidangMiringError) throw bidangMiringError;
                 setBidangMiringData(bidangMiring || []);
     
-                // Ambil data Jungkat Jungkit
                 const { data: jungkatJungkit, error: jungkatJungkitError } = await supabase
                     .from('simulations')
                     .select('*')
@@ -50,7 +48,7 @@ const SavedProgress = () => {
     }, []);
 
     const handleSimulationClick = (simulation: any) => {
-        setSelectedSimulation(simulation); // Menyimpan simulasi yang dipilih
+        setSelectedSimulation(simulation); 
     };
 
     return (
@@ -89,8 +87,7 @@ const SavedProgress = () => {
                             ))}
                         </div>
                     </div>
-
-                    {/* Bagian untuk menampilkan detail simulasi yang dipilih */}
+                    
                     {selectedSimulation && (
                         <div className="simulation-details">
                             <h3>Simulation Details</h3>

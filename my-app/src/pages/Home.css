@@ -121,16 +121,16 @@ h3 {
     justify-content: center;
     background-color: #E0E0E0;
     height: 150px;
-    width: 100%; /* Kontainer gambar memiliki lebar penuh */
+    width: 100%; 
     margin-bottom: 10px;
     border-radius: 10px;
-    overflow: hidden; /* Memastikan gambar tetap dalam batas kontainer */
+    overflow: hidden; 
 }
 
 .image-placeholder img {
-    max-height: 100%; /* Gambar akan menyesuaikan ke tinggi maksimum kontainer */
-    max-width: 100%; /* Gambar akan menyesuaikan ke lebar maksimum kontainer */
-    object-fit: contain; /* Gambar akan menyesuaikan tanpa dipotong */
+    max-height: 100%; 
+    max-width: 100%; 
+    object-fit: contain; 
 }
 
 .simulator-card button {
