@@ -16,20 +16,25 @@ FizLab adalah sebuah laboratorium virtual yang memungkinkan pengguna untuk melak
 
 ## Cara Menjalankan Proyek secara Lokal
 1. Clone Repository
-
+```
 git clone https://github.com/your-username/your-repository.git
 cd your-repository
+```
 
 2. Instalasi Dependensi Pastikan kamu berada di direktori proyek, lalu jalankan:
-
+```
 npm install
+```
 
 3. Konfigurasi Supabase Buat file .env di root proyek dan tambahkan variabel berikut sesuai dengan konfigurasi Supabase kamu:
-
+```
 REACT_APP_SUPABASE_URL=<Your Supabase URL>
 REACT_APP_SUPABASE_ANON_KEY=<Your Supabase Anon Key>
+```
 
 4. Jalankan Proyek Setelah semua dependensi terinstall dan konfigurasi environment selesai, jalankan proyek dengan perintah:
+```
+npm start
+```
 
-5. npm start
 Proyek akan berjalan di http://localhost:3000.
