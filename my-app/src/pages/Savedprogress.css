@@ -1,0 +1,40 @@
+.saved-progress {
+  padding: 20px;
+}
+
+.simulation-category {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f4f4f4;
+  border-radius: 8px;
+}
+
+.simulation-category h3 {
+  margin-top: 0;
+}
+
+.simulation-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.simulation-item {
+  padding: 10px;
+  margin: 5px 0;
+  background: #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.simulation-item:hover {
+  background: #d0d0d0;
+}
+
+.simulation-details {
+  margin-top: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
